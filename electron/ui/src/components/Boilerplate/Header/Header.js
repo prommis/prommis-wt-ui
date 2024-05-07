@@ -1,6 +1,6 @@
 import './Header.css';
 import React from 'react';
-import logo from "../../../assets/nawi-logo-color.png";
+import { Logo, ProjectName, LogoBgColor, HdrBgColor } from '../../../branding.js';
 import LoggingPanel from '../../LoggingPanel/LoggingPanel';
 import { useNavigate } from "react-router-dom";
 import { Button, Menu, MenuItem, IconButton } from '@mui/material';
@@ -28,14 +28,14 @@ export default function Header(props) {
   }
     return (
       props.show && 
-      <div id="Header">
+      <div id="Header" style={{background: HdrBgColor}}>
         
          <div  className="titlebar" > 
-          <div id="nawi_logo" style={{cursor:'pointer'}} onClick={handleNavigateHome}>
-            <img src={logo} alt="NAWI logo"/>
+          <div id="project_logo" style={{cursor:'pointer', background: LogoBgColor}} onClick={handleNavigateHome}>
+            <img src={Logo} alt="Project logo"/>
           </div>
         <div id="titlebar-name">
-          WaterTAP
+          {ProjectName}
         </div>
         <div  className="right" >
         <IconButton style={{ color:"white" }} onClick={handleShowActions}><ListIcon/></IconButton>
